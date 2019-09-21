@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReclutamientoAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.GetStockItemsAsync(System.Int32,System.Int32)">
+            <summary>
+            Retrieves Companies
+            </summary>
+            <param name="pageSize">Page size</param>
+            <param name="pageNumber">Page number</param>
+            <returns>A response with Companies list</returns>
+            <response code="200">Returns the Companies list</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.GetStockItemAsync(System.Int32)">
+            <summary>
+            Retrieves a Company by ID
+            </summary>
+            <param name="id">Company id</param>
+            <returns>A response with Company</returns>
+            <response code="200">Returns a Companies list</response>
+            <response code="404">If Company is not exists</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.PostCompanyAsync(ReclutamientoAPI.API.Models.PostCompanyRequest)">
+            <summary>
+            Creates a Company
+            </summary>
+            <param name="request">Request model</param>
+            <returns>A response with new stock item</returns>
+            <response code="200">Returns companies list</response>
+            <response code="201">A response as creation of company</response>
+            <response code="400">For bad request</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.PutCompaniesAsync(System.Int32,ReclutamientoAPI.API.Models.PutCompanyRequest)">
+            <summary>
+            Updates an existing Company
+            </summary>
+            <param name="id">Company ID</param>
+            <param name="request">Request model</param>
+            <returns>A response as update stock item result</returns>
+            <response code="200">If Company was updated successfully</response>
+            <response code="400">For bad request</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.DeleteStockItemAsync(System.Int32)">
+            <summary>
+            Deletes an existing Company
+            </summary>
+            <param name="id">Company ID</param>
+            <returns>A response as delete stock item result</returns>
+            <response code="200">If stock item was deleted successfully</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+    </members>
+</doc>
