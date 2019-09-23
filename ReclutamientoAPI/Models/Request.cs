@@ -17,11 +17,51 @@ namespace ReclutamientoAPI.API.Models
         public string CompanyName { get; set; }
     }
 
+    public class PostApplicantRequest
+    {
+        //[Key]
+        //public int? ApplicantId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ApellidoMaterno { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ApellidoPaterno { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        [Required]
+        public DateTime RegisterDate { get; set; }
+    }
+
     public class PutCompanyRequest
     {
         [Required]
         [StringLength(200)]
         public string CompanyName { get; set; }
+    }
+    public class PutApplicantRequest
+    {
+        //[Key]
+        //public int? ApplicantId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ApellidoMaterno { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ApellidoPaterno { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+
+       
     }
 
     public static class Extensions
@@ -29,8 +69,21 @@ namespace ReclutamientoAPI.API.Models
         public static Companies ToEntity(this PostCompanyRequest request)
             => new Companies
             {
-                //CompanyId = request.CompanyId,
-                CompanyName = request.CompanyName
+            //CompanyId = request.CompanyId,
+            CompanyName = request.CompanyName
             };
+        public static Applicants ToEntity(this PostApplicantRequest request)
+
+            => new Applicants
+            {
+                ApellidoPaterno = request.ApellidoPaterno,
+                ApellidoMaterno = request.ApellidoMaterno,
+                Name = request.Name,
+                RegisterDate = request.RegisterDate
+            };
+        
+
     }
+
+#pragma warning restore CS1591
 }

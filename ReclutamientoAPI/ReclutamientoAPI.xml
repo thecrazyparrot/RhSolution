@@ -4,7 +4,58 @@
         <name>ReclutamientoAPI</name>
     </assembly>
     <members>
-        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.GetStockItemsAsync(System.Int32,System.Int32)">
+        <member name="M:ReclutamientoAPI.Controllers.ApplicantsController.GetApplicantsAsync(System.Int32,System.Int32)">
+            <summary>
+            Retrieves Applicants List
+            </summary>
+            <param name="pageSize">Page size</param>
+            <param name="pageNumber">Page number</param>
+            <returns>A response with Applicants list</returns>
+            <response code="200">Returns the Applicants list</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.ApplicantsController.GeApplicantsmAsync(System.Int32)">
+            <summary>
+            Retrieves an Applicant by Id
+            </summary>
+            <param name="id">Applicant id</param>
+            <returns>A response with an Applicant</returns>
+            <response code="200">Returns a Applicant list</response>
+            <response code="404">If Applicant is not exists</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.ApplicantsController.PutApplicationAsync(System.Int32,ReclutamientoAPI.API.Models.PutApplicantRequest)">
+            <summary>
+            Updates an existing Applicant
+            </summary>
+            <param name="id">Applicant ID</param>
+            <param name="request">Request model</param>
+            <returns>A response as update Applicant result</returns>
+            <response code="200">If Applicantion was updated successfully</response>
+            <response code="400">For bad request</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.ApplicantsController.PostApplicantAsync(ReclutamientoAPI.API.Models.PostApplicantRequest)">
+            <summary>
+            Creates an Applicant
+            </summary>
+            <param name="request">Request model</param>
+            <returns>A response with new Applicant</returns>
+            <response code="200">Returns Applicant list</response>
+            <response code="201">A response as creation of an Applicant</response>
+            <response code="400">For bad request</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.ApplicantsController.DeleteApplicantAsync(System.Int32)">
+            <summary>
+            Deletes an existing Applicant
+            </summary>
+            <param name="id">Applicant ID</param>
+            <returns>A response as delete Applicant result</returns>
+            <response code="200">If Applicant was deleted successfully</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:ReclutamientoAPI.Controllers.CompaniesController.GetStockItemsAsync(System.Int32,System.Int32)">
             <summary>
             Retrieves Companies
             </summary>
@@ -14,7 +65,7 @@
             <response code="200">Returns the Companies list</response>
             <response code="500">If there was an internal server error</response>
         </member>
-        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.GetStockItemAsync(System.Int32)">
+        <member name="M:ReclutamientoAPI.Controllers.CompaniesController.GetStockItemAsync(System.Int32)">
             <summary>
             Retrieves a Company by ID
             </summary>
@@ -24,7 +75,7 @@
             <response code="404">If Company is not exists</response>
             <response code="500">If there was an internal server error</response>
         </member>
-        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.PostCompanyAsync(ReclutamientoAPI.API.Models.PostCompanyRequest)">
+        <member name="M:ReclutamientoAPI.Controllers.CompaniesController.PostCompanyAsync(ReclutamientoAPI.API.Models.PostCompanyRequest)">
             <summary>
             Creates a Company
             </summary>
@@ -35,7 +86,7 @@
             <response code="400">For bad request</response>
             <response code="500">If there was an internal server error</response>
         </member>
-        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.PutCompaniesAsync(System.Int32,ReclutamientoAPI.API.Models.PutCompanyRequest)">
+        <member name="M:ReclutamientoAPI.Controllers.CompaniesController.PutCompaniesAsync(System.Int32,ReclutamientoAPI.API.Models.PutCompanyRequest)">
             <summary>
             Updates an existing Company
             </summary>
@@ -46,7 +97,7 @@
             <response code="400">For bad request</response>
             <response code="500">If there was an internal server error</response>
         </member>
-        <member name="M:ReclutamientoAPI.Controllers.RecruitmentController.DeleteStockItemAsync(System.Int32)">
+        <member name="M:ReclutamientoAPI.Controllers.CompaniesController.DeleteStockItemAsync(System.Int32)">
             <summary>
             Deletes an existing Company
             </summary>

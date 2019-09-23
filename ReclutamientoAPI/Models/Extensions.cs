@@ -7,7 +7,24 @@ using System.Threading.Tasks;
 namespace ReclutamientoAPI.API.Models
 {
 
-    public static class ReclutamientoAPIDbContextExtensions
+    public static class ApplicantsDbContextExtensions
+    {
+        public static IQueryable<Applicants> GetApplicants(this ReclutamientoAPIDbContext dbContext, int pageSize = 10, int pageNumber = 1)
+        {
+            // Get query from DbSet
+            var query = dbContext.Applicants.AsQueryable();
+
+            return query;
+        }
+        public static async Task<Applicants> GetApplicantsAsync(this ReclutamientoAPIDbContext dbContext, Applicants entity)
+        => await dbContext.Applicants.FirstOrDefaultAsync(item => item.ApplicantId == entity.ApplicantId);
+
+        public static async Task<Applicants> GetApplicantByNameAsync(this ReclutamientoAPIDbContext dbContext, Applicants entity)
+            => await dbContext.Applicants.FirstOrDefaultAsync(item => item.Name == entity.Name); 
+            //&& item.ApellidoMaterno == entity.ApellidoMaterno && item.ApellidoPaterno == entity.ApellidoPaterno) ;
+    }
+
+    public static class CompaniesDbContextExtensions
     {
         public static IQueryable<Companies> GetCompanies(this ReclutamientoAPIDbContext dbContext, int pageSize = 10, int pageNumber = 1)
         {
@@ -21,8 +38,8 @@ namespace ReclutamientoAPI.API.Models
 
         public static async Task<Companies> GetCompaniesByCompanyNameAsync(this ReclutamientoAPIDbContext dbContext, Companies entity)
             => await dbContext.Companies.FirstOrDefaultAsync(item => item.CompanyName == entity.CompanyName);
-    
-}
+
+    }
 
 
 

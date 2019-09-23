@@ -10,15 +10,15 @@ using ReclutamientoAPI.Models;
 namespace ReclutamientoAPI.Controllers
 {
 #pragma warning disable CS1591
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/recruitment/[controller]")]
     [ApiController]
-    public class RecruitmentController : ControllerBase
+    public class CompaniesController : ControllerBase
     {
 
         protected readonly ILogger Logger;
         protected readonly ReclutamientoAPIDbContext DbContext;
 
-        public RecruitmentController(ILogger<RecruitmentController> logger, ReclutamientoAPIDbContext dbContext)
+        public CompaniesController(ILogger<CompaniesController> logger, ReclutamientoAPIDbContext dbContext)
         {
             Logger = logger;
             DbContext = dbContext;
